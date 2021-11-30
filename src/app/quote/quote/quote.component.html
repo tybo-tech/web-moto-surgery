@@ -1,0 +1,69 @@
+<app-banner-widget [heading]="heading"></app-banner-widget>
+<button (click)="back()" >Back</button>
+
+<div class="section about" *ngIf="item">
+  <h2>
+    
+  </h2>
+
+  <div class="form-item">
+    <label for="">Your full name*</label>
+    <input type="text" [(ngModel)]="item.Name" placeholder="Name and Surname" >
+  </div>
+
+  <div class="form-item">
+    <label for="">Your email address*</label>
+    <input type="text" [(ngModel)]="item.RelatedId">
+  </div>
+
+  <div class="form-item">
+    <label for="">Your phone number*</label>
+    <input type="text" [(ngModel)]="item.RelatedParentId">
+  </div>
+
+  <div class="form-item">
+    <label for="">Vin Number*</label>
+    <input type="text" [(ngModel)]="item.ParentId">
+  </div>
+
+  <div class="form-item">
+    <label for="">Or Uplaod Vin Number Image</label>
+    <app-image-widget [image]="item.ImageUrl" (imageChangedEvent)="onImageChangedEvent($event)">
+    </app-image-widget>
+
+  </div>
+
+  <div class="form-item">
+    <label for="">Engine Number*</label>
+    <input type="text" [(ngModel)]="item.Description">
+  </div>
+  <div class="form-item">
+    <label for="">Car Make & Model</label>
+    <input type="text" [(ngModel)]="item.ItemSubCategory" placeholder="Toyota corolla 2.0">
+  </div>
+
+  <div class="form-item">
+    <label for="">Model Year</label>
+    <input type="tel" [(ngModel)]="item.ItemCode">
+  </div>
+
+
+
+
+  
+
+
+
+
+
+  <br>
+  <div class="action">
+    <button [disabled] = "
+    !item.RelatedParentId 
+    || !item.RelatedParentId
+    || !item.Name
+     " (click)="save()">Get Qoute</button>
+  </div>
+</div>
+
+<app-feedback [message]="message" *ngIf="message"></app-feedback>

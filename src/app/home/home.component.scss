@@ -1,0 +1,14 @@
+.about,
+.footer {
+  padding: 1em;
+
+  @media (min-width : 1050px) {
+    padding: 2em 17em;
+  }
+}
+
+
+.about {
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}

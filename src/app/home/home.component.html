@@ -1,0 +1,40 @@
+<div class="section">
+  <app-home-slider></app-home-slider>
+</div>
+<div class="section services" *ngIf="services">
+  <h2>
+    Our services
+  </h2>
+  <div class="cards">
+    <app-card *ngFor="let item of services" [item]="item"></app-card>
+
+  </div>
+</div>
+
+
+
+<div class="section about">
+  <h2>
+    About Us
+  </h2>
+
+  <p>
+    The name of the business is MOTOR SURGERY Auto Service and Repairs, a subsidiary of SEWGAMO Holding a Black-owned
+    Company established in 2016. The Workshop operates from a 175 square metre premises, which is on the main road
+    through Edenvale, in the, “Motor Town” area, at 109 Van Riebeeck Road, EDENVALE which is +- 18 km from Sandton; +-
+    7.8 km from Bedfordview; +- 10.1 km from Eastgate; +- 4 km from Greenstone; +- 9.6 km from Kempton Park; +- 21.8 km
+    from Waterfall and Midrand; and +- 21.3 km from Boksburg.
+  </p>
+  <br>
+  <div class="action">
+    <a routerLink="/about-us"><button>Learn more</button></a>
+
+  </div>
+</div>
+
+<h1>
+  Recent blogs
+</h1>
+
+
+<app-blogs [hideHeader]="hideHeader"></app-blogs>

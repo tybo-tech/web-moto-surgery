@@ -1,0 +1,18 @@
+<app-banner-widget [heading]="heading"></app-banner-widget>
+
+<div class="section about" *ngIf="item">
+  <h2>
+    {{item.Name}}
+  </h2>
+
+  <img *ngIf="item.ImageUrl" [src]="item.ImageUrl" alt="">
+
+<div class="" [innerHtml]="item.Description"></div>
+
+
+
+</div>
+<button (click)="back()" >Back to blogs</button>
+
+
+<app-feedback [message]="message" *ngIf="message"></app-feedback>

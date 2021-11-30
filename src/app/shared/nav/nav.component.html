@@ -1,0 +1,34 @@
+<div class="nav">
+  <div class="col">
+    <a routerLink=""> <img class="logo" src="assets/images/logo.png" alt=""></a>
+  </div>
+  <div class="col">
+    <img class="menu" (click)="showNav = !showNav" src="assets/images/menu.svg" alt="">
+
+
+    <div class="pc-nav">
+      <div class="item" *ngFor="let item of items">
+        <a (click)="showNav = false" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" [routerLink]="item.Url">{{item.Name}}</a>
+      </div>
+      <div class="item">
+        <a routerLink="book"><button>Book now</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="nav-items" *ngIf="showNav">
+  <div class="item">
+    <div class="close">
+      <img (click)="showNav = !showNav" src="assets/images/close.svg" alt="">
+    </div>
+  </div>
+  <div class="item" *ngFor="let item of items">
+    <a (click)="showNav = false" [routerLink]="item.Url">{{item.Name}}</a>
+  </div>
+  <div class="item">
+    <button>Book now</button>
+  </div>
+</div>

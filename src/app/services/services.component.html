@@ -1,0 +1,9 @@
+<app-banner-widget [heading]="' Our services'"></app-banner-widget>
+
+
+<div class="section services" *ngIf="services">
+
+  <div class="cards">
+    <app-wide-card *ngFor="let item of services" [item]="item"></app-wide-card>
+  </div>
+</div>

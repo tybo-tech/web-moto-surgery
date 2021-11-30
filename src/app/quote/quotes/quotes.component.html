@@ -1,0 +1,45 @@
+<app-banner-widget [heading]="' Quotes'"></app-banner-widget>
+
+<!-- <button (click)="add()" >Add new blog</button> -->
+<div class="section services" *ngIf="services">
+
+  <div class="cards">
+    <div *ngFor="let item of items">
+      <div class="card" *ngIf="item">
+        
+      
+        <div class="body">
+          <h3>
+            {{item.Name}} | {{item.RelatedId}} | {{item.RelatedParentId}} 
+          </h3>
+
+          <p>
+            Vin Number: <b>{{item.ParentId}}</b> <br>
+            Engine Number: <b>{{item.Description}}</b> <br>
+            Car Make & Modelr: <b>{{item.ItemSubCategory}}</b> <br>
+            Model Year: <b>{{item.ItemCode}}</b> <br>  
+            CreateDate: <b>{{item.CreateDate | date : 'fullDate'}} {{item.CreateDate | date : 'shortTime'}}</b> <br>  
+          </p>
+
+        
+            <select name="" id="" [(ngModel)]="item.ItemStatus" (change)="save(item)">
+              <option value="Active">Active</option>
+              <option value="Quoted">Quoted</option>
+              <option value="Deleted">Deleted</option>
+            </select>
+      
+          <!-- <a [routerLink]="item.url"><button>Manage</button></a> -->
+      
+        </div>
+
+        <div class="img">
+          <img *ngIf="item.ImageUrl" [src]="item.ImageUrl" alt="">
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<app-feedback [message]="message" *ngIf="message"></app-feedback>
